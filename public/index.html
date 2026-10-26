@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>CRM</h1>
+    <button id="new-account" class="primary">+ New account</button>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <input id="search" type="search" placeholder="Search accounts…" autocomplete="off">
+      <ul id="account-list" class="account-list"></ul>
+    </aside>
+
+    <section id="detail" class="detail">
+      <p class="empty">Select an account, or add a new one.</p>
+    </section>
+  </main>
+
+  <template id="account-form-tpl">
+    <form class="card account-form">
+      <h2></h2>
+      <label>Business name <input name="name" required></label>
+      <label>Address <textarea name="address" rows="2"></textarea></label>
+      <div class="row">
+        <label>Phone <input name="phone" type="tel"></label>
+        <label>Email <input name="email" type="email"></label>
+      </div>
+      <p class="error" hidden></p>
+      <div class="actions">
+        <button type="submit" class="primary">Save</button>
+        <button type="button" class="cancel">Cancel</button>
+      </div>
+    </form>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
